@@ -20,21 +20,40 @@
 		  </div>
 		  <div style="margin-top:100px!important" class="row  justify-content-md-center">
   			  <div class="col col-lg-5">
-    
-				<form>
+    			<%
+					if(request.getAttribute("msg") != null)
+					{
+						%>
+						<div class="alert alert-danger" role="alert">
+							 <%=request.getAttribute("msg")  %>
+						</div>
+						<%
+					}
+				%>
+				<br>
+				<form action="login" method="post">
 					<div class="form-group">
 						<label for="exampleInputEmail1">nom d'utulisateur</label> <input
-							type="text" class="form-control" id="exampleInputEmail1"
-							placeholder="nom d'etulisateur">
+							type="text" class="form-control" id="username" name="username"
+							placeholder="nom d'etulisateur" required>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">mot de pass</label> <input
-							type="password" class="form-control" id="exampleInputPassword1"
-							placeholder="mot de pass">
+							type="password" class="form-control" id="password" name="password"
+							placeholder="mot de pass" required>
 					</div>
+					  <div class="form-group">
+					    <label for="account">type de compte</label>
+					    <select class="form-control" id="account" name="account">
+					      <option >admin</option>
+					      <option>medecin</option>
+					      <option >patient</option>
+					    </select>
+					  </div>
 					<button type="submit" class="btn btn-success">log in</button>
 					<a href="singup.jsp" class="btn btn-default" role="button">sing up</a>
 				</form>
+				
 			</div>
 			</div>
 	

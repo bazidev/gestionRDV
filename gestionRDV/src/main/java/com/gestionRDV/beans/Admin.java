@@ -1,10 +1,15 @@
-package gestionRDV;
+package com.gestionRDV.beans;
+
+import java.io.Serializable;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "admin")
-public class Admin {
+public class Admin implements Serializable{
+	public  Admin() {
+		// TODO Auto-generated constructor stub
+	}
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
