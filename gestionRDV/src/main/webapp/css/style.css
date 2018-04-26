@@ -5,6 +5,7 @@
   text-align:center;
   color:white;
   text-shadow: 2px 2px 5px black;
+  padding:20px !important;
 }
 .footer {
 	  background: url(../images/footer.jpg) center center no-repeat!important;
@@ -36,6 +37,7 @@
 	background-color: white;
 	border-radius: 100%;
 	box-shadow: 2px 2px 20px black;
+	margin-bottom: 15px;
 }
 
 

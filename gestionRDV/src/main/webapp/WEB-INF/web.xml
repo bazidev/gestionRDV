@@ -10,9 +10,19 @@
 		<description></description>
 		<servlet-class>com.gestionRDV.controllers.userInfo</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<display-name>logout</display-name>
+		<description></description>
+		<servlet-class>com.gestionRDV.controllers.logout</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>userInfo</servlet-name>
 		<url-pattern>/userInfo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="com.gestionRDV.beans.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 <title>gestion des rendez-vous</title>
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.min.css" />
@@ -16,20 +17,21 @@
 </head>
 <body>
 	<%
-		Admin user = (Admin)request.getAttribute("userInfo");
+		Admin user = (Admin)request.getAttribute("user");
 	%>
 	<div class="container-fluid ">
 		<div class="jumbotron jumbotron-fluid">
 
-			<img id="profile_picture" src="images/admin.png" />
-
+			<img id="profile_picture" src="images/admin.png" /><br>
+			<div><a href="logout" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">deconnecter</a>
 		</div>
+			</div>
 
 		<nav class="nav-justified">
 		<div class="nav nav-tabs" id="nav-tab" role="tablist">
 			<a class="nav-item nav-link active" id="nav-home-tab"
 				data-toggle="tab" href="#nav-home" role="tab"
-				aria-controls="nav-home" aria-selected="true">rendez-vous</a>
+				aria-controls="nav-home" aria-selected="true">les rendez-vous</a>
 				
 				 <a
 				class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"

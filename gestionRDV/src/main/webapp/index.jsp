@@ -1,3 +1,5 @@
+<%@page import="com.gestionRDV.beans.Patient"%>
+<%@page import="com.gestionRDV.beans.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,7 +14,14 @@
 <link type="text/css"  rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-
+	<%
+	if(request.getSession().getAttribute("user") != null)
+	{
+		request.getSession().setAttribute("r", true);
+		response.sendRedirect("login");
+	}
+	
+	%>
 	<div class="container-fluid ">
 		 <div class="jumbotron jumbotron-fluid">
 		    <h1>gestion des rendez-vous medical</h1>      

@@ -12,7 +12,7 @@ import com.gestionRDV.utils.HibernateUtil;
 
 public class LoginRequests {
 
-	public static int login(String username, String password, String account) {
+	public static Object login(String username, String password, String account) {
 		String table = account.substring(0, 1).toUpperCase() + account.substring(1);
 		Session session = HibernateUtil.getSession();
 		if (session != null) {
@@ -28,7 +28,7 @@ public class LoginRequests {
 						Admin user = (Admin)users.get(0);
 						if (password.equals(user.getPassword())) {
 							System.out.println("User: " + user.toString());
-							return user.getId();
+							return user;
 						}
 					}
 					else if(account.equals("medecin"))
@@ -36,7 +36,7 @@ public class LoginRequests {
 						Medecin user = (Medecin)users.get(0);
 						if (password.equals(user.getPassword())) {
 							System.out.println("User: " + user.toString());
-							return user.getId();
+							return user;
 						}
 					}
 					else if(account.equals("admin"))
@@ -44,7 +44,7 @@ public class LoginRequests {
 						Patient user = (Patient)users.get(0);
 						if (password.equals(user.getPassword())) {
 							System.out.println("User: " + user.toString());
-							return user.getId();
+							return user;
 						}
 					}
 				}
