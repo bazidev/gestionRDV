@@ -1,4 +1,4 @@
-package com.gestionRDV.util;
+package com.gestionRDV.utils;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

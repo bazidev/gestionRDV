@@ -4,5 +4,15 @@
 
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>userInfo</servlet-name>
+		<display-name>userInfo</display-name>
+		<description></description>
+		<servlet-class>com.gestionRDV.controllers.userInfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userInfo</servlet-name>
+		<url-pattern>/userInfo</url-pattern>
+	</servlet-mapping>
 	
 </web-app>

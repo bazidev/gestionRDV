@@ -1,4 +1,4 @@
-package com.gestionRDV.controller;
+package com.gestionRDV.controllers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.gestionRDV.dao.DBRequests;
+import com.gestionRDV.dao.LoginRequests;
+import com.gestionRDV.dao.UserInfo;
 
 /**
  * Servlet implementation class login
@@ -39,18 +40,24 @@ public class login extends HttpServlet {
 		if (username.trim().length() >= 0 && username != null && password.trim().length() >= 0 && password != null) 
 		{
 			
-			int result = DBRequests.login(username, password,account);
+			int result = LoginRequests.login(username, password,account);
 			System.out.print(result);
 			if (result != -1) {
 				System.out.println("Login success!!!");
+				page=account+"_home.jsp";
 				request.getSession().setAttribute("id", result);
-				request.setAttribute("msg", "Login Success.....");
-				page = "home.jsp";
-			} else 
+				request.getSession().setAttribute("account", account);
+
+				Object userInfo = UserInfo.getUserInfo(result, account);
+				request.setAttribute("userInfo", userInfo);
+				
+			}
+			else 
 			{
 				request.setAttribute("msg", "Assurez-vous que votre nom d'utilisateur et le mot de pass sont corrects !!!");
 			}
-			} else {
+			}
+			else {
 				request.setAttribute("msg", "entrez le nom d'utilisateur et le mot de pass ...");
 			}
 			request.getRequestDispatcher(page).include(request, response);

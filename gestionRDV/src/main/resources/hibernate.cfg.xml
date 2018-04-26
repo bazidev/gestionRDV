@@ -15,7 +15,9 @@
         <property name="show_sql">true</property>
          <mapping class="com.gestionRDV.beans.Admin"></mapping>   
          <mapping class="com.gestionRDV.beans.Medecin"></mapping> 
-         <mapping class="com.gestionRDV.beans.Patient"></mapping>     
+         <mapping class="com.gestionRDV.beans.Patient"></mapping>              
+         <mapping class="com.gestionRDV.beans.RDV"></mapping>  
+            
     </session-factory>
 </hibernate-configuration>
 

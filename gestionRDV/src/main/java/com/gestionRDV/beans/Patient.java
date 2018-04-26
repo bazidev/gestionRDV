@@ -2,6 +2,7 @@ package com.gestionRDV.beans;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -27,6 +28,8 @@ public class Patient implements Serializable {
 	private String username;
 	@Column(name = "password")
 	private String password;
+    @OneToMany(mappedBy="patient")
+    private Set<RDV> rdvs;
 	public int getId() {
 		return id;
 	}
@@ -68,6 +71,12 @@ public class Patient implements Serializable {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Set<RDV> getRdvs() {
+		return rdvs;
+	}
+	public void setRdvs(Set<RDV> rdvs) {
+		this.rdvs = rdvs;
 	}
 		
 }

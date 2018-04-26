@@ -8,9 +8,9 @@ import org.hibernate.Session;
 import com.gestionRDV.beans.Admin;
 import com.gestionRDV.beans.Medecin;
 import com.gestionRDV.beans.Patient;
-import com.gestionRDV.util.HibernateUtil;
+import com.gestionRDV.utils.HibernateUtil;
 
-public class DBRequests {
+public class LoginRequests {
 
 	public static int login(String username, String password, String account) {
 		String table = account.substring(0, 1).toUpperCase() + account.substring(1);
@@ -64,24 +64,5 @@ public class DBRequests {
 		return -1;
 	}
 
-	/*public String register(User user) {
-		String msg = "Registration unsuccessful, try again.....";
-		Session session = HibernateUtil.getSessionFactory();
-		if (session != null) {
-			try {
-				if (user != null) {
-					String username = (String) session.save(user);
-					session.beginTransaction().commit();
-					msg = "User " + username + " created successfully, please login...";
-				}
-			} catch (Exception exception) {
-				System.out.println("Exception occred while reading user data: " + exception.getMessage());
-			}
 
-		} else {
-			System.out.println("DB server down.....");
-		}
-		System.out.println("msg:" + msg);
-		return msg;
-	}*/
 }
