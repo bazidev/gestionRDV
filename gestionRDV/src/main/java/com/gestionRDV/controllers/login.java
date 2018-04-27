@@ -1,6 +1,8 @@
 package com.gestionRDV.controllers;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.gestionRDV.beans.*;
 import com.gestionRDV.dao.LoginRequests;
 import com.gestionRDV.dao.UserInfo;
+import com.gestionRDV.dao.loadData;
 
 /**
  * Servlet implementation class login
@@ -77,6 +80,13 @@ public class login extends HttpServlet {
 				page=account+"_home.jsp";
 				request.getSession().setAttribute("user", result);
 				request.getSession().setAttribute("account", account);
+				switch(account)
+				{
+				case "admin":
+					List<RDV> rdvs = (List<RDV>) loadData.allRDV();
+					request.setAttribute("rdvs", rdvs);
+					;break;
+				}
 			}
 			else 
 			{

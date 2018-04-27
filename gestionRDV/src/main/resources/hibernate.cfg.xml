@@ -12,7 +12,7 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.id.new_generator_mappings">false</property>
-        <property name="show_sql">true</property>
+        <property name="show_sql">false</property>
          <mapping class="com.gestionRDV.beans.Admin"></mapping>   
          <mapping class="com.gestionRDV.beans.Medecin"></mapping> 
          <mapping class="com.gestionRDV.beans.Patient"></mapping>              

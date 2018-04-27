@@ -16,6 +16,12 @@
 		<description></description>
 		<servlet-class>com.gestionRDV.controllers.logout</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>loadData</servlet-name>
+		<display-name>loadData</display-name>
+		<description></description>
+		<servlet-class>com.gestionRDV.controllers.loadData</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>userInfo</servlet-name>
 		<url-pattern>/userInfo</url-pattern>
@@ -23,6 +29,10 @@
 	<servlet-mapping>
 		<servlet-name>logout</servlet-name>
 		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>loadData</servlet-name>
+		<url-pattern>/loadData</url-pattern>
 	</servlet-mapping>
 	
 </web-app>
